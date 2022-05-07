@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import Typical from "react-typical";
 import axios from "axios";
 import { toast } from "react-toastify";
-
-import imgBack from "../../../src/images/mailz.jpeg";
-import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
@@ -17,8 +14,7 @@ export const ContactMe = (props) => {
 		Animations.animations.fadeInScreen(props.id);
 	};
 
-	const fadeInSubscription =
-		ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+	ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
         const [name, setName] = useState("");
         const [email, setEmail] = useState("");
         const [message, setMessage] = useState("");
@@ -87,7 +83,7 @@ export const ContactMe = (props) => {
         <div className="back-form">
           <div className="img-back">
             <h4>Send Your Email Here!</h4>
-            <img src={imgBack} alt="image not found" />
+            <img src={require("../../../src/images/mailz.jpeg")} alt="not found" />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>
@@ -106,7 +102,7 @@ export const ContactMe = (props) => {
                 <i className="fa fa-paper-plane" />
                 {bool ? (
                   <b className="load">
-                    <img src={load1} alt="image not responding" />
+                    <img src={require("../../../src/images/load2.gif")} alt="not responding" />
                   </b>
                 ) : (
                   ""
